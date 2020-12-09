@@ -13,6 +13,21 @@
         tools:layout_editor_absoluteX="130dp"
         tools:layout_editor_absoluteY="349dp">
 
+        <TextView
+            android:id="@+id/lblUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de Usuario"
+            android:textAlignment="center"
+            android:textStyle="normal|bold" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberPassword" />
+
         <Button
             android:id="@+id/btn_entrar"
             android:layout_width="match_parent"

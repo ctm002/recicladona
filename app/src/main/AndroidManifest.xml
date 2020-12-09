@@ -10,18 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jasisalioquecosasno">
         <activity android:name=".AsignarActivity"></activity>
-        <activity android:name=".AaignarActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".DonarActivity" />
         <activity android:name=".ContactoActivity" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
         -->
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

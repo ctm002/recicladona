@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".AsignarActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_asignar_donativo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASINAR DONATIVO" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">recicladona</string>
+    <string name="contactar">contactar</string>
+    <string name="donar">donar</string>
+    <string name="adquirir">adquirir</string>
+    <string name="asociacion">asociacion</string>
+    <string name="asignar">asignar</string>
+    <string name="recicladona_gmail_com">recicladona@gmail.com</string>
+    <string name="_569_86890254">569 86890254</string>
+    <string name="reciclaydona_gmail_com">Reciclaydona@gmail.com</string>
+    <string name="todo">TODO</string>
+
+
+    <string-array name="Menu">
+
+        <item>menu</item>
+        <item>inicio</item>
+        <item>newspaper</item>
+
+    </string-array>
+    <string name="title_activity_donar">DonarActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_contactar">ContactarActivity</string>
+    <string name="title_activity_asignar">AsignarActivity</string>
+    <string name="title_activity_asociacion">AsociacionActivity</string>
+
+</resources>

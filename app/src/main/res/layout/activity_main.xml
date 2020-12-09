@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.1"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_atras"
+                android:layout_width="57dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/todo"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/ic_volver" />
+
+            <Spinner
+                android:id="@+id/sp_menu"
+                android:layout_width="265dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:entries="@array/Menu" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="237dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/todo"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/ic_donar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_contactar"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="0.5"
+                android:text="@string/contactar" />
+
+            <Button
+                android:id="@+id/btn_empresas"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="0.5"
+                android:text="@string/asociacion" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_asignar"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="0.5"
+                android:adjustViewBounds="true"
+                android:text="@string/asignar" />
+
+            <Button
+                android:id="@+id/btn_donar"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="0.5"
+
+                android:text="@string/donar" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="0.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

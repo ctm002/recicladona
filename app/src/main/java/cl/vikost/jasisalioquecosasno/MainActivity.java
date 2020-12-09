@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity{
                 startActivityForResult(intent, 0);
             }
         });
+
+        _botonDonar = findViewById(R.id.btn_donar);
+        _botonDonar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DonarActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
 }

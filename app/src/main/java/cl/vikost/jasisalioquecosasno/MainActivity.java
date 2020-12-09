@@ -39,7 +39,20 @@ public class MainActivity extends AppCompatActivity{
                 Intent intent = new Intent(v.getContext(), DonarActivity.class);
                 startActivityForResult(intent, 0);
             }
+
         });
+        _botonAsignar = findViewById(R.id.btn_asignar);
+        _botonAsignar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AsignarActivity.class);
+                startActivityForResult(intent, 0);
+            }
+
+        });
+
+
+
     }
 
 }

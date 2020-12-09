@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jasisalioquecosasno">
-        <activity android:name=".AaignarActivity"></activity>
+        <activity android:name=".AsignarActivity"></activity>
+        <activity android:name=".AaignarActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DonarActivity" />
         <activity android:name=".ContactoActivity" />

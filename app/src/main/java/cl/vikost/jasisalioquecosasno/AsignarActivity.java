@@ -1,14 +1,14 @@
-|package cl.vikost.jasisalioquecosasno;
+package cl.vikost.jasisalioquecosasno;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AaignarActivity extends AppCompatActivity {
+public class AsignarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aaignar);
+        setContentView(R.layout.activity_asignar);
     }
 }

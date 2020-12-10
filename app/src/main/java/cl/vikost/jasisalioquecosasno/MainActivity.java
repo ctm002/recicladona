@@ -1,5 +1,6 @@
 package cl.vikost.jasisalioquecosasno;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ImageViewCompat;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity{
    ImageViewCompat _foto;
@@ -15,9 +17,6 @@ public class MainActivity extends AppCompatActivity{
     Button _botonAsignar;
     Button _botonDonar;
     Button _botonAsociaciones;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +51,13 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setDisplayHomeAsUpEnabled(true);
 
-
+        String titleBar = "Recicladona";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+        }
     }
 
 }

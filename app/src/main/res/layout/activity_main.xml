@@ -31,12 +31,7 @@
                 android:layout_weight="0.1"
                 app:srcCompat="@drawable/ic_volver" />
 
-            <Spinner
-                android:id="@+id/sp_menu"
-                android:layout_width="265dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
-                android:entries="@array/Menu" />
+            
         </LinearLayout>
 
         <ImageView

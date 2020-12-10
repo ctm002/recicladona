@@ -6,30 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ContactoActivity">
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/lst_datos_contacto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/lblTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="INFORMACION DE CONTACTO"
-            android:textAlignment="center"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/lblEmailEmpresa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="recicladona@gmail.com" />
-
-        <TextView
-            android:id="@+id/lblCelularEmpresa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="986890251" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

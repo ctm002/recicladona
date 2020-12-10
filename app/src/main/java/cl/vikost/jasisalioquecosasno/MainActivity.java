@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
     }

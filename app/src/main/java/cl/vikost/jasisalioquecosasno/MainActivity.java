@@ -1,5 +1,6 @@
 package cl.vikost.jasisalioquecosasno;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ImageViewCompat;
 
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
     }

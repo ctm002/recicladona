@@ -23,14 +23,6 @@
             android:weightSum="1"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/img_atras"
-                android:layout_width="57dp"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/todo"
-                android:layout_weight="0.1"
-                app:srcCompat="@drawable/ic_volver" />
-
             <Spinner
                 android:id="@+id/sp_menu"
                 android:layout_width="265dp"

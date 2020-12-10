@@ -18,13 +18,13 @@
             android:text="Asignar donativo" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txt_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre usuario" />
+            android:text="ingrese usuario" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/txt_IngresoUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,10 +32,10 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="558dp"/>
+            android:layout_height="577dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
+            android:id="@+id/floatingActionButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity{
     Button _botonAsociaciones;
     Button _botonCerrar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity{
         _botonAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AsignarActivity.class);
+                Intent intent = new Intent(v.getContext(),listAsignarActivity.class);
                 startActivityForResult(intent, 0);
             }
 

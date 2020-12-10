@@ -17,7 +17,7 @@
             android:id="@+id/btn_asignar_donativo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ASINAR DONATIVO" />
+            android:text="ASIGNAR DONATIVO" />
 
         <TextView
             android:layout_width="match_parent"

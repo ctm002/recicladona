@@ -1,4 +1,4 @@
-package cl.vikost.jasisalioquecosasno;
+package cl.vikost.negocio;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ImageViewCompat;
@@ -14,9 +14,7 @@ public class MainActivity extends AppCompatActivity{
     Button _botonAsignar;
     Button _botonDonar;
     Button _botonAsociaciones;
-
-
-
+    Button _botonCerrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +34,12 @@ public class MainActivity extends AppCompatActivity{
         _botonDonar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DonarActivity.class);
+                Intent intent = new Intent(v.getContext(), ListDonativosActivity.class);
                 startActivityForResult(intent, 0);
             }
 
         });
+
         _botonAsignar = findViewById(R.id.btn_asignar);
         _botonAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +50,22 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
+        _botonCerrar = findViewById(R.id.btn_cerrar);
+        _botonCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                startActivityForResult(intent, 0);
+            }
 
+        });
 
+        String titleBar = "Recicladona";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+        }
     }
 
 }

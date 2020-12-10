@@ -27,7 +27,10 @@ public class ContactoActivity extends AppCompatActivity {
                 "Recicladona Spa",
                 "Representante Legal: Victoria Tapia",
                 "Domicilio: Cerro Catedral #9523, Villa Comendador, Pudahuel, Santiago",
-                "Celular: 98689025X"};
+                "Celular: 98689025X",
+                "Correo Electronico: vtapia@recicladora.cl"
+        };
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 values);

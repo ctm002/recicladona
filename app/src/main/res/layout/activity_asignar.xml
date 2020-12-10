@@ -32,11 +32,11 @@
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <Spinner
-            android:id="@+id/spbeneficio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@ar" />
+<!--        <Spinner-->
+<!--            android:id="@+id/spbeneficio"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:entries="@ar" />-->
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

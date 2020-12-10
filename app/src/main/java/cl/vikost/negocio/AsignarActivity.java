@@ -1,4 +1,4 @@
-package cl.vikost.jasisalioquecosasno;
+package cl.vikost.negocio;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -8,12 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class ContactoActivity extends AppCompatActivity {
+public class AsignarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacto);
+        setContentView(R.layout.activity_asignar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);

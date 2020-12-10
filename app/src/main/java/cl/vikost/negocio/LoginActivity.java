@@ -1,4 +1,4 @@
-package cl.vikost.jasisalioquecosasno;
+package cl.vikost.negocio;
 
 import android.content.Intent;
 import android.graphics.Color;

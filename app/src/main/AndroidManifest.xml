@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cl.vikost.jasisalioquecosasno">
+    package="cl.vikost.negocio">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jasisalioquecosasno">
-        <activity android:name=".AsignarActivity"></activity>
+        <activity android:name=".ListDonativosActivity"></activity>
+        <activity android:name=".AsignarActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".DonarActivity" />
         <activity android:name=".ContactoActivity" />
@@ -20,6 +23,7 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -28,7 +32,5 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
     </application>
-
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>

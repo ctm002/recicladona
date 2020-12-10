@@ -4,26 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsignarActivity">
+    tools:context=".listAsignarActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="152dp">
-
-        <Button
-            android:id="@+id/btn_asignar_donativo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ASIGNAR DONATIVO" />
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Asignar donativo" />
+
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:text="ingrese rut " />
+            android:text="Nombre usuario" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -32,11 +30,16 @@
             android:ems="10"
             android:inputType="textPersonName" />
 
-<!--        <Spinner-->
-<!--            android:id="@+id/spbeneficio"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:entries="@ar" />-->
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="558dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_menu_add" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

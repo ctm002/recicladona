@@ -9,12 +9,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="152dp">
 
         <Button
             android:id="@+id/btn_asignar_donativo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ASINAR DONATIVO" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:text="ingrese rut " />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Spinner
+            android:id="@+id/spbeneficio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@ar" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

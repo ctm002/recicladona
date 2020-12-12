@@ -22,6 +22,8 @@ import java.util.List;
 
 import data.MyDataHelper;
 
+
+
 public class ListDonativosActivity extends AppCompatActivity {
 
     SQLiteDatabase       _database;

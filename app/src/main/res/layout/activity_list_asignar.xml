@@ -35,7 +35,7 @@
             android:layout_height="577dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
+            android:id="@+id/btn_Asignar_donativo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"

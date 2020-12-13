@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity{
         _botonAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),listAsignarActivity.class);
+                Intent intent = new Intent(v.getContext(), ListAsignarActivity.class);
                 startActivityForResult(intent, 0);
             }
 

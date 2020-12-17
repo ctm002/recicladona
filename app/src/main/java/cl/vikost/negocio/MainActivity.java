@@ -1,20 +1,21 @@
 package cl.vikost.negocio;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ImageViewCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity{
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ImageViewCompat;
+
+public class MainActivity extends AppCompatActivity {
+
     ImageViewCompat _foto;
-    Button _botonContacto;
-    Button _botonAsignar;
-    Button _botonDonar;
-    Button _botonEmpresas;
-    Button _botonCerrar;
+    Button          _botonContacto;
+    Button          _botonAsignar;
+    Button          _botonDonar;
+    Button          _botonEmpresas;
+    Button          _botonCerrar;
 
 
     @Override

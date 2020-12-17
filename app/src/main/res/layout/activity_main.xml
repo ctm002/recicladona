@@ -31,16 +31,16 @@
                 android:entries="@array/Menu" />
         </LinearLayout>
 
+
         <ImageView
             android:id="@+id/img_logo"
             android:layout_width="match_parent"
             android:layout_height="237dp"
+            android:layout_weight="0.5"
             android:adjustViewBounds="true"
             android:contentDescription="@string/todo"
             android:gravity="center"
-            android:layout_weight="0.5"
             app:srcCompat="@drawable/ic_donar" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:text="@string/contactar" />
 
             <Button
-                android:id="@+id/btn_empresas"
+                android:id="@+id/btn_empresas2"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
@@ -78,16 +78,6 @@
             android:weightSum="1">
 
             <Button
-                android:id="@+id/btn_asignar"
-                android:layout_width="130dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:text="@string/asignar" />
-
-            <Button
                 android:id="@+id/btn_donar"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
@@ -97,6 +87,15 @@
 
                 android:text="@string/donar" />
 
+            <Button
+                android:id="@+id/btn_Asignar"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="0.5"
+                android:text="Asignar" />
+
         </LinearLayout>
 
         <Button
@@ -105,14 +104,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:text="Cerrar " />
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="0.2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 

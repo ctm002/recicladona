@@ -4,42 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listAsignarActivity">
+    tools:context=".ListAsignarActivity">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/txt.ingresoproducto"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="66dp"
+        android:text="ingrese producto "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="Asignar donativo" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="660dp"
+        android:layout_marginEnd="341dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
-        <TextView
-            android:id="@+id/txt_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ingrese usuario" />
-
-        <EditText
-            android:id="@+id/txt_IngresoUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="577dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_Asignar_donativo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_add" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

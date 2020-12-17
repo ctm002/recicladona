@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
-        _botonAsignar = findViewById(R.id.btn_asignar);
+        _botonAsignar = findViewById(R.id.btn_Asignar);
         _botonAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),listAsignarActivity.class);
+                Intent intent = new Intent(v.getContext(),ListDonativosActivity.class);
                 startActivityForResult(intent, 0);
             }
 

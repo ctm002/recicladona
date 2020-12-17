@@ -1,17 +1,16 @@
 package cl.vikost.negocio;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import data.MyDataHelper;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ContactoActivity extends AppCompatActivity {
 
@@ -30,6 +29,12 @@ public class ContactoActivity extends AppCompatActivity {
                 "Celular: 98689025X",
                 "Correo Electronico: vtapia@recicladora.cl"
         };
+
+
+
+
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,

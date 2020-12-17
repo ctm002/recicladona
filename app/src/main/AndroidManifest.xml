@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jasisalioquecosasno">
-        <activity android:name=".ListAsignarActivity"></activity>
+        <activity android:name=".RegistrarActivity"></activity>
+        <activity android:name=".ListAsignarActivity" />
         <activity android:name=".AssociationsActivity" />
         <activity android:name=".AsignarActivity" />
         <activity android:name=".listAsignarActivity" />

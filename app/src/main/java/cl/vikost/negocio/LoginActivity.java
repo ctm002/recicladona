@@ -15,6 +15,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText _txtUserName;
     EditText _txtPassword;
     EditText _txtRespuesta;
+    Button  _btnRegistrarNuevoUsuario;
+
 
 
     @Override
@@ -34,6 +36,21 @@ public class LoginActivity extends AppCompatActivity {
                 if (_txtUserName.getText().toString().equals(_txtPassword.getText().toString())) {
                     _txtRespuesta.setText("");
                     Intent intent = new Intent(v.getContext(), MainActivity.class);
+                    startActivityForResult(intent, 0);
+                } else {
+                    _txtRespuesta.setText("Error al entrar en la app");
+
+                }
+            }
+        });
+
+        _btnRegistrarNuevoUsuario = findViewById(R.id.btn_registro);
+        _btnRegistrarNuevoUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (_txtUserName.getText().toString().equals(_txtPassword.getText().toString())) {
+                    _txtRespuesta.setText("");
+                    Intent intent = new Intent(v.getContext(), RegistrarActivity.class);
                     startActivityForResult(intent, 0);
                 } else {
                     _txtRespuesta.setText("Error al entrar en la app");

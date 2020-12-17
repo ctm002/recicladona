@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import data.MyDataHelper;
+import data.MyBaseDatos;
 
 
 
@@ -34,8 +34,8 @@ public class ListDonativosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_donativos);
 
         final ArrayList<String> list         = new ArrayList<String>();
-        Cursor                  cursor       = null;
-        MyDataHelper            dbDataHelper = new MyDataHelper(this);
+        Cursor      cursor       = null;
+        MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
         if (_database != null) {
             cursor = _database.rawQuery("SELECT * FROM donativos;", null);

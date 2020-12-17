@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
-   ImageViewCompat _foto;
+    ImageViewCompat _foto;
     Button _botonContacto;
     Button _botonAsignar;
     Button _botonDonar;

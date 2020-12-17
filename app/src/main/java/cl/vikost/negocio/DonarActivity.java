@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import data.MyDataHelper;
+import data.MyBaseDatos;
 
 public class DonarActivity extends AppCompatActivity {
 
@@ -37,11 +36,11 @@ public class DonarActivity extends AppCompatActivity {
         }
 
 
-        MyDataHelper dbDataHelper = new MyDataHelper(this);
+        MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
-        if (_database != null) {
-            // Hacer las operaciones que queramos sobre la base de datos
-        }
+//        if (_database != null) {
+//            // Hacer las operaciones que queramos sobre la base de datos
+//        }
 
         _txtProducto = findViewById(R.id.txtProducto);
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class MyDataHelper extends SQLiteOpenHelper {
+public class MyBaseDatos extends SQLiteOpenHelper {
 
     private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT)";
     private static final String USUARIOS_TABLE_CREATE  = "CREATE TABLE usuarios(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _password TEXT)";
@@ -13,7 +13,7 @@ public class MyDataHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "data.sqlite";
     private static final int DB_VERSION = 1;
 
-    public MyDataHelper(Context context) {
+    public MyBaseDatos(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 

@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDataHelper extends SQLiteOpenHelper {
 
-    private static final String COMMENTS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT)";
+    private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT)";
+    private static final String USUARIOS_TABLE_CREATE  = "CREATE TABLE usuarios(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _password TEXT)";
+
+
     private static final String DB_NAME = "data.sqlite";
     private static final int DB_VERSION = 1;
 
@@ -16,7 +19,8 @@ public class MyDataHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(COMMENTS_TABLE_CREATE);
+        db.execSQL(DONATIVOS_TABLE_CREATE);
+        db.execSQL(USUARIOS_TABLE_CREATE);
     }
 
     @Override

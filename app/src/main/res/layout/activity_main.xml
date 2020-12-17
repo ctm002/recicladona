@@ -59,7 +59,7 @@
                 android:text="@string/contactar" />
 
             <Button
-                android:id="@+id/btn_empresas2"
+                android:id="@+id/btn_empresas"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"

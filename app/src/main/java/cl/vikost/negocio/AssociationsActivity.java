@@ -28,13 +28,10 @@ import android.widget.ListView;
                     "Correo Electronico: vtapia@recicladora.cl"
             };
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                    android.R.layout.list_content,
-                    values);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
 
             ListView listView = (ListView) findViewById(R.id.list_engel_asociaciones);
             listView.setAdapter(adapter);
-
             String titleBar = "asociacion";
             if (getActionBar() != null) {
                 getActionBar().setTitle(titleBar);

@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity{
     Button _botonContacto;
     Button _botonAsignar;
     Button _botonDonar;
-    Button _botonAsociaciones;
+    Button _botonEmpresas;
     Button _botonCerrar;
 
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity{
         _botonAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),ListDonativosActivity.class);
+                Intent intent = new Intent(v.getContext(), ListAsignarActivity.class);
                 startActivityForResult(intent, 0);
             }
 
@@ -56,6 +56,16 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                startActivityForResult(intent, 0);
+            }
+
+        });
+
+        _botonEmpresas = findViewById(R.id.btn_empresas);
+        _botonEmpresas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AssociationsActivity.class);
                 startActivityForResult(intent, 0);
             }
 

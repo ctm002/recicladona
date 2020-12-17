@@ -32,6 +32,7 @@ import android.widget.ListView;
 
             ListView listView = (ListView) findViewById(R.id.list_engel_asociaciones);
             listView.setAdapter(adapter);
+
             String titleBar = "asociacion";
             if (getActionBar() != null) {
                 getActionBar().setTitle(titleBar);

@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
-        String titleBar = "Recicladona";
+        String titleBar = "RECICLADONA";
         if (getActionBar() != null) {
             getActionBar().setTitle(titleBar);
         } else {

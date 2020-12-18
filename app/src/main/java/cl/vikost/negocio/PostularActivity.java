@@ -19,7 +19,9 @@ import cl.vikost.modelo.VariablesGlobales;
 
 public class PostularActivity extends AppCompatActivity {
 
-    Donativo       _donativo;
+    public static final String CANCELAR = "CANCELAR POSTULACION";
+    public static final String POSTULAR = "POSTULAR";
+    Donativo _donativo;
     TextView       _txtTituloProducto;
     Button         _btnPostular;
     SQLiteDatabase _database;
@@ -48,10 +50,10 @@ public class PostularActivity extends AppCompatActivity {
             _cursor.moveToFirst();
             if (!_cursor.isAfterLast()) {
                 int estado = _cursor.getInt(_cursor.getColumnIndex("_estado"));
-                _btnPostular.setText( estado > 0 ? "CANCELAR POSTULACION" : "POSTULAR");
+                _btnPostular.setText( estado > 0 ? CANCELAR : POSTULAR);
                 _isOk = true;
             } else {
-                _btnPostular.setText("POSTULAR");
+                _btnPostular.setText(POSTULAR);
                 _isOk = false;
             }
             _cursor.close();
@@ -62,11 +64,12 @@ public class PostularActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (_isOk) {
                     ContentValues cv = new ContentValues();
-                    cv.put("_estado", _btnPostular.getText().toString().equals("POSTULAR") ? 1 : 0);
+                    cv.put("_estado", _btnPostular.getText().toString().equals(POSTULAR) ? 1 : 0);
                     cv.put("_fecha", LocalDateTime.now().toString());
                     int rowAffected = _database.update("postulantes", cv, "_donativo=? AND _username=?", new String[]{_donativo.getId().toString(), VariablesGlobales.getInstance().usuario});
                     _isOk = rowAffected > 0;
-                    _btnPostular.setText(rowAffected > 0 ? "POSTULAR" : "CANCELAR POSTULACION");
+                    _btnPostular.setText(rowAffected > 0 ? _btnPostular.getText().toString().equals(POSTULAR) ? CANCELAR : POSTULAR
+                            : CANCELAR);
                 } else {
                     ContentValues cv = new ContentValues();
                     cv.put("_username", VariablesGlobales.getInstance().usuario);
@@ -75,7 +78,7 @@ public class PostularActivity extends AppCompatActivity {
                     cv.put("_donativo", _donativo.getId());
                     Long id = _database.insert("postulantes", null, cv);
                     _isOk = id > 0;
-                    _btnPostular.setText(_isOk ? "CANCELAR POSTULACION" : "POSTULAR");
+                    _btnPostular.setText(_isOk ? CANCELAR : CANCELAR);
                 }
             }
         });

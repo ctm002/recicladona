@@ -1,4 +1,4 @@
-package data;
+package cl.vikost.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,9 +8,10 @@ public class MyBaseDatos extends SQLiteOpenHelper {
 
     private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT)";
     private static final String USUARIOS_TABLE_CREATE  = "CREATE TABLE usuarios(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _password TEXT)";
+    private static final String POSTULANTES_TABLE_CREATE  = "CREATE TABLE postulantes(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _fecha TEXT, _estado INTEGER)";
 
 
-    private static final String DB_NAME = "data.sqlite";
+    private static final String DB_NAME = "cl.vikost.data.sqlite";
     private static final int DB_VERSION = 1;
 
     public MyBaseDatos(Context context) {
@@ -21,6 +22,7 @@ public class MyBaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DONATIVOS_TABLE_CREATE);
         db.execSQL(USUARIOS_TABLE_CREATE);
+        db.execSQL(POSTULANTES_TABLE_CREATE);
         deleteDataBase(db);
         loadDataBase(db);
     }
@@ -47,9 +49,9 @@ public class MyBaseDatos extends SQLiteOpenHelper {
         db.execSQL(sql);
         sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'notebook');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'cama de dos plazas');";
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('vtapia', 'cama de dos plazas');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'mesa para seis personas');";
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('vtapia', 'mesa para seis personas');";
         db.execSQL(sql);
     }
 

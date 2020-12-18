@@ -12,7 +12,8 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import data.MyBaseDatos;
+import cl.vikost.data.MyBaseDatos;
+import cl.vikost.modelo.VariablesGlobales;
 
 public class DonarActivity extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class DonarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Insert con ContentValues
                 ContentValues cv = new ContentValues();
-                cv.put("_usuario", "vtapia");
+                cv.put("_usuario", VariablesGlobales.getInstance().usuario);
                 cv.put("_producto", _txtProducto.getText().toString());
                 if (_database != null) {
                     Long id =  _database.insert("donativos", null, cv);

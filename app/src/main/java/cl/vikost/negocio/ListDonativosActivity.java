@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +21,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+import cl.vikost.data.MyBaseDatos;
 import cl.vikost.modelo.Donativo;
-import data.MyBaseDatos;
+import cl.vikost.modelo.VariablesGlobales;
 
 
 public class ListDonativosActivity extends AppCompatActivity {
@@ -39,7 +42,7 @@ public class ListDonativosActivity extends AppCompatActivity {
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
         if (_database != null) {
-            cursor = _database.rawQuery("SELECT * FROM donativos;", null);
+            cursor = _database.rawQuery("SELECT * FROM donativos WHERE _usuario !=?;",  new String[] {VariablesGlobales.getInstance().usuario });
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 Donativo donativo = new Donativo();
@@ -57,6 +60,18 @@ public class ListDonativosActivity extends AppCompatActivity {
         final AdaptadorDonativos adapter  = new AdaptadorDonativos(this);
         final ListView           listview = (ListView) findViewById(R.id.lstDonativos);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(ListDonativosActivity.this, PostularActivity.class);
+                intent.putExtra("donativo", _lstDonativos.get(i));
+
+                startActivityForResult(intent, 0);
+//              Toast.makeText(ListDonativosActivity.this, _lstDonativos.get(i).getTitulo(), Toast.LENGTH_LONG).show();
+
+            }
+        });
 
         _btnAgregar = findViewById(R.id.btn_agregar_donativo);
         _btnAgregar.setOnClickListener(new View.OnClickListener() {
@@ -103,11 +118,6 @@ public class ListDonativosActivity extends AppCompatActivity {
             TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
             txtUsuario.setText(_lstDonativos.get(position).getUsuario());
 
-//            ImageView img = (ImageView) item.findViewById(R.id.img_logo_donativo);
-//            if (donativos.get(position).getGenero() == 'm')
-//                imageView1.setImageResource(R.mipmap.hombre);
-//            else
-//                imageView1.setImageResource(R.mipmap.mujer);
             return (item);
         }
     }

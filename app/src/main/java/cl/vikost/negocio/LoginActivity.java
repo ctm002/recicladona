@@ -11,7 +11,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import data.MyBaseDatos;
+import cl.vikost.data.MyBaseDatos;
+import cl.vikost.modelo.VariablesGlobales;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -53,11 +54,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     _cursor.moveToFirst();
                     if (!_cursor.isAfterLast()) {
+                        VariablesGlobales.getInstance().usuario = userName;
                         _cursor.close();
                         _txtRespuesta.setText("");
                         Intent intent = new Intent(v.getContext(), MainActivity.class);
                         startActivityForResult(intent, 0);
                     } else {
+                        VariablesGlobales.getInstance().usuario = "";
                         _cursor.close();
                         _txtRespuesta.setText("Error al entrar en la app");
                     }

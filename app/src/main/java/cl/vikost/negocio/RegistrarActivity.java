@@ -12,7 +12,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import data.MyBaseDatos;
+import cl.vikost.data.MyBaseDatos;
 
 public class RegistrarActivity extends AppCompatActivity {
 

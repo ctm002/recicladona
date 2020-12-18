@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,14 +30,14 @@ public class ListDonativosActivity extends AppCompatActivity {
 
     SQLiteDatabase       _database;
     FloatingActionButton _btnAgregar;
-    ArrayList<Donativo>    donativos;
+    ArrayList<Donativo>  _lstDonativos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_donativos);
 
-        donativos = new ArrayList<>();
+        _lstDonativos = new ArrayList<>();
         Cursor      cursor       = null;
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
@@ -50,7 +49,7 @@ public class ListDonativosActivity extends AppCompatActivity {
                 String producto = cursor.getString(cursor.getColumnIndex("_producto"));
                 Donativo donativo = new Donativo();
                 donativo.setTitulo(producto);
-                donativos.add(donativo);
+                _lstDonativos.add(donativo);
                 cursor.moveToNext();
             }
             cursor.close();
@@ -116,7 +115,7 @@ public class ListDonativosActivity extends AppCompatActivity {
         AppCompatActivity appCompatActivity;
 
         AdaptadorDonativos(AppCompatActivity context) {
-            super(context, R.layout.detalle_donativo, donativos);
+            super(context, R.layout.detalle_donativo, _lstDonativos);
             appCompatActivity = context;
         }
 
@@ -125,7 +124,7 @@ public class ListDonativosActivity extends AppCompatActivity {
             View           item     = inflater.inflate(R.layout.detalle_donativo, null);
 
             TextView textView1 = (TextView) item.findViewById(R.id.txt_titulo_donativo);
-            textView1.setText(donativos.get(position).getTitulo());
+            textView1.setText(_lstDonativos.get(position).getTitulo());
 
 //            ImageView img = (ImageView) item.findViewById(R.id.img_logo_donativo);
 //            if (donativos.get(position).getGenero() == 'm')

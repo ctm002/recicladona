@@ -5,10 +5,14 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,39 +23,42 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cl.vikost.modelo.Donativo;
 import data.MyBaseDatos;
-
 
 
 public class ListDonativosActivity extends AppCompatActivity {
 
     SQLiteDatabase       _database;
     FloatingActionButton _btnAgregar;
+    ArrayList<Donativo>    donativos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_donativos);
 
-        final ArrayList<String> list         = new ArrayList<String>();
+        donativos = new ArrayList<>();
         Cursor      cursor       = null;
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
         if (_database != null) {
             cursor = _database.rawQuery("SELECT * FROM donativos;", null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String usuario  = cursor.getString(cursor.getColumnIndex("_usuario"));
+                String producto = cursor.getString(cursor.getColumnIndex("_producto"));
+                Donativo donativo = new Donativo();
+                donativo.setTitulo(producto);
+                donativos.add(donativo);
+                cursor.moveToNext();
+            }
+            cursor.close();
         }
 
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            String usuario  = cursor.getString(cursor.getColumnIndex("_usuario"));
-            String producto = cursor.getString(cursor.getColumnIndex("_producto"));
-            list.add(producto);
-            cursor.moveToNext();
-        }
-        cursor.close();
 
+        final AdaptadorDonativos adapter  = new AdaptadorDonativos(this);
         final ListView           listview = (ListView) findViewById(R.id.lstDonativos);
-        final StableArrayAdapter adapter  = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
         _btnAgregar = findViewById(R.id.btn_agregar_donativo);
@@ -102,6 +109,31 @@ public class ListDonativosActivity extends AppCompatActivity {
             return true;
         }
 
+    }
+
+    class AdaptadorDonativos extends ArrayAdapter<Donativo> {
+
+        AppCompatActivity appCompatActivity;
+
+        AdaptadorDonativos(AppCompatActivity context) {
+            super(context, R.layout.detalle_donativo, donativos);
+            appCompatActivity = context;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater = appCompatActivity.getLayoutInflater();
+            View           item     = inflater.inflate(R.layout.detalle_donativo, null);
+
+            TextView textView1 = (TextView) item.findViewById(R.id.txt_titulo_donativo);
+            textView1.setText(donativos.get(position).getTitulo());
+
+//            ImageView img = (ImageView) item.findViewById(R.id.img_logo_donativo);
+//            if (donativos.get(position).getGenero() == 'm')
+//                imageView1.setImageResource(R.mipmap.hombre);
+//            else
+//                imageView1.setImageResource(R.mipmap.mujer);
+            return (item);
+        }
     }
 
 }

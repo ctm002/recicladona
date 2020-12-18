@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Recicladona</string>
     <string name="contactar">contactar</string>
-    <string name="donar">donar</string>
+    <string name="donar">Home</string>
     <string name="adquirir">adquirir</string>
     <string name="asociacion">asociacion</string>
     <string name="asignar">asignar</string>

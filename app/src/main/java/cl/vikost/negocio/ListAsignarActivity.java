@@ -95,7 +95,7 @@ public class ListAsignarActivity extends AppCompatActivity {
             View           item     = inflater.inflate(R.layout.detalle_donativo, null);
 
             TextView txtTitulo = (TextView) item.findViewById(R.id.txt_titulo_donativo);
-            txtTitulo.setText(_lstDonativos.get(position).getTitulo());
+            txtTitulo.setText(_lstDonativos.get(position).getTitulo().toUpperCase());
 
             TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
             txtUsuario.setText(_lstDonativos.get(position).getUsuario());

@@ -14,7 +14,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/img_available" />
+        app:srcCompat="@drawable/img_user" />
 
     <TextView
         android:id="@+id/postulante_nombre"

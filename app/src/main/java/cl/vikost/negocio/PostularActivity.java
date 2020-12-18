@@ -41,7 +41,8 @@ public class PostularActivity extends AppCompatActivity {
 
         _btnPostular = findViewById(R.id.btn_postular);
 
-
+        MyBaseDatos dbDataHelper = new MyBaseDatos(this);
+        _database = dbDataHelper.getWritableDatabase();
 
         if (_database != null) {
             String sql = "SELECT * FROM postulantes WHERE _donativo=? AND _username=?";

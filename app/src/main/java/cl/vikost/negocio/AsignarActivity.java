@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cl.vikost.data.MyBaseDatos;
@@ -21,10 +25,11 @@ import cl.vikost.modelo.VariablesGlobales;
 
 public class AsignarActivity extends AppCompatActivity {
 
-    List<Postulante>    _postulantes;
+    List<Postulante>    _postulantes = new ArrayList<>();
     Donativo            _donativo;
     SQLiteDatabase      _database;
-    Cursor              _cursor = null;
+    Cursor   _cursor = null;
+    TextView _txtProducto = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +56,25 @@ public class AsignarActivity extends AppCompatActivity {
 
             _postulantes.add(postulante);
             _cursor.moveToNext();
-
         }
+        _cursor.close();
+
+        _txtProducto = findViewById(R.id.asignar_txt_producto);
+        _txtProducto.setText(_donativo.getTitulo());
+
+        final AsignarActivity.AdaptadorPostulantes adapter  = new AsignarActivity.AdaptadorPostulantes(this);
+        final ListView                                         listview = (ListView) findViewById(R.id.asignar_lst_postulantes);
+        listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Intent intent = new Intent(ListDonativosActivity.this, PostularActivity.class);
+//                intent.putExtra("donativo", _lstDonativos.get(i));
+//                startActivityForResult(intent, 0);
+//              Toast.makeText(ListDonativosActivity.this, _lstDonativos.get(i).getTitulo(), Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 
@@ -61,19 +83,21 @@ public class AsignarActivity extends AppCompatActivity {
         AppCompatActivity appCompatActivity;
 
         AdaptadorPostulantes(AppCompatActivity context) {
-            super(context, R.layout.detalle_donativo, _postulantes);
+            super(context, R.layout.detalle_postulante , _postulantes);
             appCompatActivity = context;
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = appCompatActivity.getLayoutInflater();
-            View           item     = inflater.inflate(R.layout.detalle_donativo, null);
+            View           item     = inflater.inflate(R.layout.detalle_postulante, null);
 
-            TextView txtTitulo = (TextView) item.findViewById(R.id.txt_titulo_donativo);
-//            txtTitulo.setText(_postulantes.get(position).getTitulo());
 
-            TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
-//            txtUsuario.setText(_postulantes.get(position).getUsuario());
+            TextView txtUsuario = (TextView) item.findViewById(R.id.postulante_nombre);
+            txtUsuario.setText(_postulantes.get(position).usuario);
+
+            TextView txtFecha = (TextView) item.findViewById(R.id.postulante_fecha);
+            txtFecha.setText(_postulantes.get(position).fecha);
+
 
             return (item);
         }

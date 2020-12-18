@@ -51,9 +51,9 @@ public class MyBaseDatos extends SQLiteOpenHelper {
         db.execSQL(sql);
         sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'notebook');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('vtapia', 'cama de dos plazas');";
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('dtapia', 'cama de dos plazas');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('vtapia', 'mesa para seis personas');";
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('dtapia', 'mesa para seis personas');";
         db.execSQL(sql);
     }
 

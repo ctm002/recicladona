@@ -21,11 +21,45 @@ public class MyBaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DONATIVOS_TABLE_CREATE);
         db.execSQL(USUARIOS_TABLE_CREATE);
+        deleteDataBase(db);
+        loadDataBase(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void deleteDataBase(SQLiteDatabase db) {
+        String sql = "delete FROM donativos;";
+        db.execSQL(sql);
+        sql = "delete FROM usuarios;";
+        db.execSQL(sql);
+    }
+
+    public void loadDataBase(SQLiteDatabase db){
+        loadUsuarios(db);
+        loadDonativos(db);
+    }
+
+    private void loadDonativos(SQLiteDatabase db) {
+        String sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'cocina usada');";
+        db.execSQL(sql);
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'notebook');";
+        db.execSQL(sql);
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'cama de dos plazas');";
+        db.execSQL(sql);
+        sql = "INSERT INTO Donativos(_usuario, _producto)VALUES('ctapia', 'mesa para seis personas');";
+        db.execSQL(sql);
+    }
+
+    private void loadUsuarios(SQLiteDatabase db) {
+        String sql = "INSERT INTO Usuarios(_username, _password)VALUES('ctapia', '123');";
+        db.execSQL(sql);
+        sql = "INSERT INTO Usuarios(_username, _password)VALUES('dtapia', '1234');";
+        db.execSQL(sql);
+        sql = "INSERT INTO Usuarios(_username, _password)VALUES('vmolina', '12345');";
+        db.execSQL(sql);
     }
 
 }

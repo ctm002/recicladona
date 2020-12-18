@@ -2,9 +2,11 @@ package cl.vikost.negocio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ImageViewCompat;
 
@@ -16,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     Button          _botonDonar;
     Button          _botonEmpresas;
     Button          _botonCerrar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,12 +73,20 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        String titleBar = "RECICLADONA";
+        String titleBar = "MENU";
         if (getActionBar() != null) {
             getActionBar().setTitle(titleBar);
+//            getActionBar().setDisplayHomeAsUpEnabled(true);
         } else {
             getSupportActionBar().setTitle(titleBar);
+//            getActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        startActivity(new Intent(this, LoginActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 
 }

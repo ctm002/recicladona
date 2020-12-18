@@ -2,6 +2,10 @@ package cl.vikost.modelo;
 
 public class Donativo {
 
+    private String titulo;
+
+    private String usuario;
+
     public Donativo() {
     }
 
@@ -13,6 +17,12 @@ public class Donativo {
         this.titulo = titulo;
     }
 
-    private String titulo;
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
 
 }

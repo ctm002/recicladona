@@ -4,43 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DonarActivity">
+    tools:context=".DonativoActivity">
 
     <TextView
-        android:id="@+id/lblProducto"
+        android:id="@+id/donar_lbl_producto"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Ingrese nombre del producto"
+        app:layout_constraintBottom_toTopOf="@+id/donar_txt_producto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtProducto"
+        android:id="@+id/donar_txt_producto"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/donar_lbl_domicilio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblProducto" />
+        app:layout_constraintTop_toBottomOf="@+id/donar_lbl_producto" />
 
     <Button
-        android:id="@+id/btn_guardar_donativo"
+        android:id="@+id/donar_btn_guardar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:lineSpacingExtra="8sp"
         android:text="Guardar"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProducto" />
+        app:layout_constraintTop_toBottomOf="@+id/donar_txt_domicilio" />
+
+    <TextView
+        android:id="@+id/donar_lbl_domicilio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Direccion de Retiro"
+        app:layout_constraintBottom_toTopOf="@+id/donar_txt_domicilio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donar_txt_producto" />
+
+    <EditText
+        android:id="@+id/donar_txt_domicilio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/donar_btn_guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donar_lbl_domicilio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

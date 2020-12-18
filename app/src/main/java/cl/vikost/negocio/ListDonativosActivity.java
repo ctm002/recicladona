@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,7 +78,7 @@ public class ListDonativosActivity extends AppCompatActivity {
         _btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DonarActivity.class);
+                Intent intent = new Intent(v.getContext(), DonativoActivity.class);
                 startActivityForResult(intent, 0);
             }
         });

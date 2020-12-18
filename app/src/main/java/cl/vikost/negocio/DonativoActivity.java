@@ -15,9 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import cl.vikost.data.MyBaseDatos;
 import cl.vikost.modelo.VariablesGlobales;
 
-public class DonarActivity extends AppCompatActivity {
+public class DonativoActivity extends AppCompatActivity {
 
     EditText       _txtProducto;
+    EditText       _txtDomicilio;
     Button         _botonGuardar;
     SQLiteDatabase _database;
 
@@ -27,23 +28,14 @@ public class DonarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donar);
 
-        String titleBar = "Donar";
-        if (getActionBar() != null) {
-            getActionBar().setTitle(titleBar);
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-        } else {
-            getSupportActionBar().setTitle(titleBar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
 
 
-        _txtProducto = findViewById(R.id.txtProducto);
+        _txtProducto = findViewById(R.id.donar_txt_producto);
+        _txtDomicilio = findViewById(R.id.donar_txt_domicilio);
 
-        this._botonGuardar = findViewById(R.id.btn_guardar_donativo);
+        this._botonGuardar = findViewById(R.id.donar_btn_guardar);
         this._botonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,14 +43,24 @@ public class DonarActivity extends AppCompatActivity {
                 ContentValues cv = new ContentValues();
                 cv.put("_usuario", VariablesGlobales.getInstance().usuario);
                 cv.put("_producto", _txtProducto.getText().toString());
+                cv.put("_domicilio", _txtDomicilio.getText().toString());
                 if (_database != null) {
                     Long id =  _database.insert("donativos", null, cv);
                     if (id > 0 ){
-                        startActivity(new Intent(DonarActivity.this, ListDonativosActivity.class));
+                        startActivity(new Intent(DonativoActivity.this, ListDonativosActivity.class));
                     }
                 }
             }
         });
+
+        String titleBar = "Nuevo Donativo";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
     }
 

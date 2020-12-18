@@ -18,7 +18,7 @@
         <activity android:name=".AsignarActivity" />
         <activity android:name=".ListDonativosActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DonarActivity" />
+        <activity android:name=".DonativoActivity" />
         <activity android:name=".ContactoActivity" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld

@@ -50,6 +50,8 @@ public class ListDonativosActivity extends AppCompatActivity {
                 donativo.setUsuario(usuario);
                 String producto = cursor.getString(cursor.getColumnIndex("_producto"));
                 donativo.setTitulo(producto);
+                Long id = cursor.getLong(cursor.getColumnIndex("_id"));
+                donativo.setId(id);
                 _lstDonativos.add(donativo);
                 cursor.moveToNext();
             }

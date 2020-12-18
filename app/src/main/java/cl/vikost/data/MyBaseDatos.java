@@ -8,7 +8,7 @@ public class MyBaseDatos extends SQLiteOpenHelper {
 
     private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT)";
     private static final String USUARIOS_TABLE_CREATE  = "CREATE TABLE usuarios(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _password TEXT)";
-    private static final String POSTULANTES_TABLE_CREATE  = "CREATE TABLE postulantes(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _fecha TEXT, _estado INTEGER)";
+    private static final String POSTULANTES_TABLE_CREATE  = "CREATE TABLE postulantes(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _fecha TEXT, _estado INTEGER, _donativo INTEGER)";
 
 
     private static final String DB_NAME = "cl.vikost.data.sqlite";
@@ -36,6 +36,8 @@ public class MyBaseDatos extends SQLiteOpenHelper {
         String sql = "delete FROM donativos;";
         db.execSQL(sql);
         sql = "delete FROM usuarios;";
+        db.execSQL(sql);
+        sql = "delete FROM postulantes;";
         db.execSQL(sql);
     }
 

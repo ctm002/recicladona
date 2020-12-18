@@ -76,10 +76,8 @@ public class MainActivity extends AppCompatActivity {
         String titleBar = "MENU";
         if (getActionBar() != null) {
             getActionBar().setTitle(titleBar);
-//            getActionBar().setDisplayHomeAsUpEnabled(true);
         } else {
             getSupportActionBar().setTitle(titleBar);
-//            getActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 

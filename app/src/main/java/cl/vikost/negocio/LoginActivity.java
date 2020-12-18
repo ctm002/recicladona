@@ -29,7 +29,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         _txtUserName = findViewById(R.id.txtUserName);
+        _txtUserName.setText("ctapia");
+
         _txtPassword = findViewById(R.id.txtPassword);
+        _txtPassword.setText("123");
+
         _txtRespuesta = findViewById(R.id.txtRespuesta);
         _txtRespuesta.setTextColor(Color.RED);
 

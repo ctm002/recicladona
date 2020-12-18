@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -62,6 +64,21 @@ public class ListAsignarActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
+        String titleBar = "Mis Donativos";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        startActivity(new Intent(this, MainActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 
     class AdaptadorDonativos extends ArrayAdapter<Donativo> {

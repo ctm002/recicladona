@@ -5,14 +5,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -76,6 +79,21 @@ public class AsignarActivity extends AppCompatActivity {
             }
         });
 
+        String titleBar = "Asignar Donativo";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        startActivity(new Intent(this, ListAsignarActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 
     class AdaptadorPostulantes extends ArrayAdapter<Postulante> {
@@ -91,13 +109,11 @@ public class AsignarActivity extends AppCompatActivity {
             LayoutInflater inflater = appCompatActivity.getLayoutInflater();
             View           item     = inflater.inflate(R.layout.detalle_postulante, null);
 
-
             TextView txtUsuario = (TextView) item.findViewById(R.id.postulante_nombre);
             txtUsuario.setText(_postulantes.get(position).usuario);
 
             TextView txtFecha = (TextView) item.findViewById(R.id.postulante_fecha);
             txtFecha.setText(_postulantes.get(position).fecha);
-
 
             return (item);
         }

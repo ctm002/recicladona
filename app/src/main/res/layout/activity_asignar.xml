@@ -8,10 +8,13 @@
 
     <ImageView
         android:id="@+id/asignar_img_producto"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/asignar_txt_producto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_donar" />
 
@@ -19,6 +22,9 @@
         android:id="@+id/asignar_txt_producto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -30,7 +36,11 @@
     <ListView
         android:id="@+id/asignar_lst_postulantes"
         android:layout_width="match_parent"
-        android:layout_height="403dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/asignar_txt_producto"
         app:layout_constraintHorizontal_bias="0.0"

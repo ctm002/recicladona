@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDateTime;
@@ -82,6 +84,21 @@ public class PostularActivity extends AppCompatActivity {
                 }
             }
         });
+
+        String titleBar = "Donativo";
+        if (getActionBar() != null) {
+            getActionBar().setTitle(titleBar);
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setTitle(titleBar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        startActivity(new Intent(this, ListDonativosActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -13,7 +13,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/img_available" />
+        tools:srcCompat="@drawable/img_available"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/postulante_nombre"

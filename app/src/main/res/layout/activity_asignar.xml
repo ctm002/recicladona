@@ -6,48 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".AsignarActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/asignar_img_producto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="445dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/asignar_txt_producto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_donar" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:text="Asignar donativo " />
+    <TextView
+        android:id="@+id/asignar_txt_producto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/asignar_lst_postulantes"
+        app:layout_constraintEnd_toEndOf="@+id/asignar_img_producto"
+        app:layout_constraintStart_toStartOf="@+id/asignar_img_producto"
+        app:layout_constraintTop_toBottomOf="@+id/asignar_img_producto" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ingresar usuario " />
+    <ListView
+        android:id="@+id/asignar_lst_postulantes"
+        android:layout_width="match_parent"
+        android:layout_height="403dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/asignar_txt_producto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/asignar_txt_producto"
+        app:layout_constraintTop_toBottomOf="@+id/asignar_txt_producto">
 
-        <EditText
-            android:id="@+id/txt.Usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+    </ListView>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Evaluar " />
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="403dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

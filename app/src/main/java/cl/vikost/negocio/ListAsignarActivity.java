@@ -1,11 +1,13 @@
 package cl.vikost.negocio;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,6 +43,8 @@ public class ListAsignarActivity extends AppCompatActivity {
                 donativo.setUsuario(usuario);
                 String producto = cursor.getString(cursor.getColumnIndex("_producto"));
                 donativo.setTitulo(producto);
+                Long id = cursor.getLong(cursor.getColumnIndex("_id"));
+                donativo.setId(id);
                 _lstDonativos.add(donativo);
                 cursor.moveToNext();
             }
@@ -50,6 +54,14 @@ public class ListAsignarActivity extends AppCompatActivity {
         ListAsignarActivity.AdaptadorDonativos adapter  = new ListAsignarActivity.AdaptadorDonativos(this);
         ListView                               listview = (ListView) findViewById(R.id.lst_asignaciones);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ListAsignarActivity.this, AsignarActivity.class);
+                intent.putExtra("donativo", _lstDonativos.get(i));
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
     class AdaptadorDonativos extends ArrayAdapter<Donativo> {
@@ -71,11 +83,6 @@ public class ListAsignarActivity extends AppCompatActivity {
             TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
             txtUsuario.setText(_lstDonativos.get(position).getUsuario());
 
-//            ImageView img = (ImageView) item.findViewById(R.id.img_logo_donativo);
-//            if (donativos.get(position).getGenero() == 'm')
-//                imageView1.setImageResource(R.mipmap.hombre);
-//            else
-//                imageView1.setImageResource(R.mipmap.mujer);
             return (item);
         }
     }

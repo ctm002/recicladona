@@ -39,9 +39,7 @@ public class DonarActivity extends AppCompatActivity {
 
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
-//        if (_database != null) {
-//            // Hacer las operaciones que queramos sobre la base de datos
-//        }
+
 
         _txtProducto = findViewById(R.id.txtProducto);
 

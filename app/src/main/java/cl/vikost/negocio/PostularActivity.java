@@ -21,7 +21,7 @@ public class PostularActivity extends AppCompatActivity {
 
     public static final String CANCELAR = "CANCELAR POSTULACION";
     public static final String POSTULAR = "POSTULAR";
-    Donativo _donativo;
+    Donativo       _donativo;
     TextView       _txtTituloProducto;
     Button         _btnPostular;
     SQLiteDatabase _database;
@@ -41,8 +41,7 @@ public class PostularActivity extends AppCompatActivity {
 
         _btnPostular = findViewById(R.id.btn_postular);
 
-        MyBaseDatos dbDataHelper = new MyBaseDatos(this);
-        _database = dbDataHelper.getWritableDatabase();
+
 
         if (_database != null) {
             String sql = "SELECT * FROM postulantes WHERE _donativo=? AND _username=?";
@@ -50,7 +49,7 @@ public class PostularActivity extends AppCompatActivity {
             _cursor.moveToFirst();
             if (!_cursor.isAfterLast()) {
                 int estado = _cursor.getInt(_cursor.getColumnIndex("_estado"));
-                _btnPostular.setText( estado > 0 ? CANCELAR : POSTULAR);
+                _btnPostular.setText(estado > 0 ? CANCELAR : POSTULAR);
                 _isOk = true;
             } else {
                 _btnPostular.setText(POSTULAR);

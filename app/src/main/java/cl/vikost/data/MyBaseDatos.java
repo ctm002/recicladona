@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyBaseDatos extends SQLiteOpenHelper {
 
-    private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT, _domicilio TEXT)";
+    private static final String DONATIVOS_TABLE_CREATE = "CREATE TABLE donativos(_id INTEGER PRIMARY KEY AUTOINCREMENT, _usuario TEXT, _producto TEXT, _domicilio TEXT, _fecha TEXT)";
     private static final String USUARIOS_TABLE_CREATE  = "CREATE TABLE usuarios(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _password TEXT)";
     private static final String POSTULANTES_TABLE_CREATE  = "CREATE TABLE postulantes(_id INTEGER PRIMARY KEY AUTOINCREMENT, _username TEXT, _fecha TEXT, _estado INTEGER, _donativo INTEGER)";
 
@@ -47,13 +47,13 @@ public class MyBaseDatos extends SQLiteOpenHelper {
     }
 
     private void loadDonativos(SQLiteDatabase db) {
-        String sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio)VALUES('ctapia', 'cocina usada', 'Pelequen 1277, Pudahuel, Santiago');";
+        String sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio, _fecha)VALUES('ctapia', 'cocina usada', 'Pelequen 1277, Pudahuel, Santiago', '2020-12-19');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio)VALUES('ctapia', 'notebook', 'Pelequen 1277, Pudahuel, Santiago');";
+        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio, _fecha)VALUES('ctapia', 'notebook', 'Pelequen 1277, Pudahuel, Santiago', '2020-12-19');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio)VALUES('dtapia', 'cama de dos plazas', 'Cerro Catedral 9523, Pudahuel, Santiago');";
+        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio, _fecha)VALUES('dtapia', 'cama de dos plazas', 'Cerro Catedral 9523, Pudahuel, Santiago', '2020-12-19');";
         db.execSQL(sql);
-        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio)VALUES('dtapia', 'mesa para seis personas', 'San francisco 9003, Pudahuel, Santiago');";
+        sql = "INSERT INTO Donativos(_usuario, _producto, _domicilio, _fecha)VALUES('dtapia', 'mesa para seis personas', 'San francisco 9003, Pudahuel, Santiago', '2020-12-19');";
         db.execSQL(sql);
     }
 

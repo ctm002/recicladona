@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cl.vikost.data.MyBaseDatos;
 import cl.vikost.modelo.Donativo;
@@ -24,8 +25,8 @@ import cl.vikost.modelo.VariablesGlobales;
 
 public class ListAsignarActivity extends AppCompatActivity {
 
-    SQLiteDatabase      _database;
-    ArrayList<Donativo> _lstDonativos;
+    SQLiteDatabase _database;
+    List<Donativo> _lstDonativos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class ListAsignarActivity extends AppCompatActivity {
         MyBaseDatos dbDataHelper = new MyBaseDatos(this);
         _database = dbDataHelper.getWritableDatabase();
         if (_database != null) {
-            cursor = _database.rawQuery("SELECT * FROM donativos WHERE _usuario=?;",  new String[] {VariablesGlobales.getInstance().usuario });
+            cursor = _database.rawQuery("SELECT d._id, d._usuario, _producto, count(p._id) AS _cantidad FROM donativos d LEFT JOIN postulantes p ON d._id = p._donativo WHERE d._usuario=? GROUP BY d._id, d._usuario, d._producto;",  new String[] {VariablesGlobales.getInstance().usuario });
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 Donativo donativo = new Donativo();
@@ -45,6 +46,8 @@ public class ListAsignarActivity extends AppCompatActivity {
                 donativo.setUsuario(usuario);
                 String producto = cursor.getString(cursor.getColumnIndex("_producto"));
                 donativo.setTitulo(producto);
+                int cantidad = cursor.getInt(cursor.getColumnIndex("_cantidad"));
+                donativo.setCantidadPostulantes(cantidad);
                 Long id = cursor.getLong(cursor.getColumnIndex("_id"));
                 donativo.setId(id);
                 _lstDonativos.add(donativo);
@@ -99,6 +102,12 @@ public class ListAsignarActivity extends AppCompatActivity {
 
             TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
             txtUsuario.setText(_lstDonativos.get(position).getUsuario());
+
+            TextView txtCantPostulantes = (TextView) item.findViewById(R.id.txt_cantidad_postulantes_donativo);
+            txtCantPostulantes.setText(String.format( "Postulantes: %s", _lstDonativos.get(position).getCantidadPostulantes()));
+
+            TextView txtFecha = (TextView) item.findViewById(R.id.txt_fecha_donativo);
+            txtFecha.setText("");
 
             return (item);
         }

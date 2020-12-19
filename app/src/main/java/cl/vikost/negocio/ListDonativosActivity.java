@@ -51,6 +51,8 @@ public class ListDonativosActivity extends AppCompatActivity {
                 donativo.setTitulo(producto);
                 Long id = cursor.getLong(cursor.getColumnIndex("_id"));
                 donativo.setId(id);
+                String fecha = cursor.getString(cursor.getColumnIndex("_fecha"));
+                donativo.setFecha(fecha);
                 _lstDonativos.add(donativo);
                 cursor.moveToNext();
             }
@@ -118,6 +120,12 @@ public class ListDonativosActivity extends AppCompatActivity {
 
             TextView txtUsuario = (TextView) item.findViewById(R.id.txt_usuario_donativo);
             txtUsuario.setText(_lstDonativos.get(position).getUsuario());
+
+            TextView txtCantPostulantes = (TextView) item.findViewById(R.id.txt_cantidad_postulantes_donativo);
+            txtCantPostulantes.setText("");
+
+            TextView txtFecha = (TextView) item.findViewById(R.id.txt_fecha_donativo);
+            txtFecha.setText(_lstDonativos.get(position).getFecha());
 
             return (item);
         }

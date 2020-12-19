@@ -14,6 +14,10 @@ public class Donativo implements Serializable {
 
     private List<Postulante> postulantes;
 
+    private int cantidadPostulantes;
+
+    private String fecha;
+
     public Donativo() {
         this.postulantes = new ArrayList<>();
     }
@@ -50,4 +54,19 @@ public class Donativo implements Serializable {
         this.postulantes = postulantes;
     }
 
+    public void setCantidadPostulantes(int cantidad) {
+        cantidadPostulantes = cantidad;
+    }
+
+    public int getCantidadPostulantes() {
+        return cantidadPostulantes;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 }
